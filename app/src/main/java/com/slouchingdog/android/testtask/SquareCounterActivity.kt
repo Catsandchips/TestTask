@@ -9,7 +9,7 @@ import kotlin.math.pow
 
 class SquareCounterActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySquareCounterBinding
-    lateinit var fileForLogs: File
+    private lateinit var fileForLogs: File
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +21,7 @@ class SquareCounterActivity : AppCompatActivity() {
         binding.tvSquareActivityCounter.text = String.format(
             Locale.getDefault(), "%d", counter.toDouble().pow(2.0).toInt()
         )
-        fileForLogs = File("${filesDir.path}/activityLifecycleLogs.txt")
+        fileForLogs = File(filesDir.path, "activityLifecycleLogs.txt")
         fileForLogs.appendText("SquareCounterActivity CREATED\n")
     }
 

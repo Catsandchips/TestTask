@@ -12,7 +12,7 @@ const val COUNTER_STATE = "COUNTER STATE"
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    lateinit var fileForLogs: File
+    private lateinit var fileForLogs: File
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         setCounter(0)
 
-        fileForLogs = File("${filesDir.path}/activityLifecycleLogs.txt")
+        fileForLogs = File(filesDir.path, "activityLifecycleLogs.txt")
         fileForLogs.appendText("MainActivity CREATED\n")
     }
 
